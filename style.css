@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #FFFDF9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hero Banner */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                url('https://unsplash.com') center/cover;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #FBC02D;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #D32F2F;
+    color: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #B71C1C;
+}
+
+/* Container & Menu Grid */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #D32F2F;
+    margin-bottom: 30px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.price {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #F57C00;
+    margin-bottom: 12px;
+}
+
+.level-select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.card-body button {
+    width: 100%;
+    padding: 10px;
+    background-color: #D32F2F;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.card-body button:hover {
+    background-color: #B71C1C;
+}
+
+/* Keranjang Belanja */
+.cart-box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-top: 5px solid #F57C00;
+}
+
+.cart-box h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#daftar-keranjang {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#daftar-keranjang li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.btn-hapus {
+    background: #ffebee;
+    color: #D32F2F;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.cart-summary {
+    font-size: 1.25rem;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.customer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.customer-form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.btn-wa {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-wa:hover {
+    background-color: #1EBE5D;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: #ddd;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waroeng Nasi Goreng</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Waroeng Nasi Goreng</h1>
+            <p>Aroma khas wajan besi dengan resep tradisional serta dimasak hangat saat dipesan!</p>
+            <a href="#menu-section" class="btn-primary">Lihat Menu & Pesan</a>
+        </div>
+    </header>
+
+    <main class="container" id="menu-section">
+        <h2 class="section-title">Daftar Menu</h2>
+        
+        <div class="menu-grid">
+            <!-- Menu 1 -->
+            <div class="menu-card">
+                <img src="images/Nasi.jpg" alt="Nasi Goreng">
+                <div class="card-body">
+                    <h3>Nasi Goreng Spesial</h3>
+                    <p class="desc">Nasi goreng bumbu rempah dengan suwiran ayam, bakso, sosis, dan telur ceplok.</p>
+                    <p class="price">Rp 15.000</p>
+                    <select id="pedas-1" class="level-select">
+                        <option value="Tidak Pedas">Tidak Pedas</option>
+                        <option value="Sedang" selected>Pedas Sedang</option>
+                        <option value="Pedas">Pedas</option>
+                        <option value="Ekstra Pedas">Ekstra Pedas 🔥</option>
+                    </select>
+                    <button onclick="tambahPesanan('Nasi Goreng Spesial', 15000, 'pedas-1')">+ Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Menu 2 -->
+            <div class="menu-card">
+                <img src="images/MieGoreng.jpg" alt="Mie Goreng">
+                <div class="card-body">
+                    <h3>Mie Goreng Spesial</h3>
+                    <p class="desc">Mie kuning kenyal dimasak dengan kecap manis pilihan, sayuran segar, dan ayam suwir.</p>
+                    <p class="price">Rp 16.000</p>
+                    <select id="pedas-2" class="level-select">
+                        <option value="Tidak Pedas">Tidak Pedas</option>
+                        <option value="Sedang" selected>Pedas Sedang</option>
+                        <option value="Pedas">Pedas</option>
+                        <option value="Ekstra Pedas">Ekstra Pedas 🔥</option>
+                    </select>
+                    <button onclick="tambahPesanan('Mie Goreng Spesial', 16000, 'pedas-2')">+ Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Menu 3 -->
+            <div class="menu-card">
+                <img src="images/Kwetiau.jpg" alt="Kwetiau Goreng">
+                <div class="card-body">
+                    <h3>Kwetiau Goreng</h3>
+                    <p class="desc">Kwetiau lembut dengan aroma bawang putih, sawi hijau, dan telur orak-arik.</p>
+                    <p class="price">Rp 16.000</p>
+                    <select id="pedas-3" class="level-select">
+                        <option value="Tidak Pedas">Tidak Pedas</option>
+                        <option value="Sedang" selected>Pedas Sedang</option>
+                        <option value="Pedas">Pedas</option>
+                        <option value="Ekstra Pedas">Ekstra Pedas 🔥</option>
+                    </select>
+                    <button onclick="tambahPesanan('Kwetiau Goreng', 16000, 'pedas-3')">+ Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Menu 4 -->
+            <div class="menu-card">
+                <img src="images/EsTehManis.jpeg" alt="Es Teh Manis">
+                <div class="card-body">
+                    <h3>Es Teh Manis</h3>
+                    <p class="desc">Teh melati wangi seduhan baru dengan gula asli dan es batu kristal yang menyegarkan.</p>
+                    <p class="price">Rp 3.000</p>
+                    <button onclick="tambahPesanan('Es Teh Manis', 3000, null)">+ Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Menu 5 -->
+            <div class="menu-card">
+                <img src="images/EsJeruk.jpg" alt="Es Jeruk Peras">
+                <div class="card-body">
+                    <h3>Es Jeruk</h3>
+                    <p class="desc">Perasan jeruk segar asli tanpa pemanis buatan, cocok penetral rasa pedas.</p>
+                    <p class="price">Rp 4.000</p>
+                    <button onclick="tambahPesanan('Es Jeruk', 4000, null)">+ Tambah ke Keranjang</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bagian Keranjang Belanja -->
+        <section class="cart-box">
+            <h2>🛒 Keranjang Pesanan Anda</h2>
+            <ul id="daftar-keranjang">
+                <li class="empty-msg">Belum ada menu yang dipilih.</li>
+            </ul>
+            
+            <div class="cart-summary">
+                <p>Total Pembayaran: <strong id="total-harga">Rp 0</strong></p>
+            </div>
+
+            <div class="customer-form">
+                <input type="text" id="nama-pemesan" placeholder="Nama Anda (Wajib diisi)">
+                <input type="text" id="alamat-pemesan" placeholder="Alamat Pengiriman / Nomor Meja">
+                <button onclick="kirimWhatsApp()" class="btn-wa">Pesan Sekarang via WhatsApp</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>📍 Jl Cenderawasih Gg. Merak 2 No.1, RT.001/RW.020, Beran Lor, Tridadi, Kec. Sleman, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55511 | ⏰ Buka Setiap Hari: 17.30 - 22.00 WIB</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

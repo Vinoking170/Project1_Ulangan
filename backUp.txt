@@ -1,0 +1,444 @@
+
+//HTML
+    <!DOCTYPE html>
+    <html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waroeng Nasi Goreng</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Waroeng Nasi Goreng</h1>
+            <p>Aroma khas wajan besi dengan resep tradisional serta dimasak hangat saat dipesan!</p>
+            <a href="#menu-section" class="btn-primary">Lihat Menu & Pesan</a>
+        </div>
+    </header>
+
+    <main class="container" id="menu-section">
+        <h2 class="section-title">Daftar Menu</h2>
+        
+        <div class="menu-grid">
+            <!-- Menu 1 -->
+            <div class="menu-card">
+                <img src="images/Nasi.jpg" alt="Nasi Goreng">
+                <div class="card-body">
+                    <h3>Nasi Goreng Spesial</h3>
+                    <p class="desc">Nasi goreng bumbu rempah dengan suwiran ayam, bakso, sosis, dan telur ceplok.</p>
+                    <p class="price">Rp 15.000</p>
+                    <select id="pedas-1" class="level-select">
+                        <option value="Tidak Pedas">Tidak Pedas</option>
+                        <option value="Sedang" selected>Pedas Sedang</option>
+                        <option value="Pedas">Pedas</option>
+                        <option value="Ekstra Pedas">Ekstra Pedas 🔥</option>
+                    </select>
+                    <button onclick="tambahPesanan('Nasi Goreng Spesial', 15000, 'pedas-1')">+ Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Menu 2 -->
+            <div class="menu-card">
+                <img src="images/MieGoreng.jpg" alt="Mie Goreng">
+                <div class="card-body">
+                    <h3>Mie Goreng Spesial</h3>
+                    <p class="desc">Mie kuning kenyal dimasak dengan kecap manis pilihan, sayuran segar, dan ayam suwir.</p>
+                    <p class="price">Rp 16.000</p>
+                    <select id="pedas-2" class="level-select">
+                        <option value="Tidak Pedas">Tidak Pedas</option>
+                        <option value="Sedang" selected>Pedas Sedang</option>
+                        <option value="Pedas">Pedas</option>
+                        <option value="Ekstra Pedas">Ekstra Pedas 🔥</option>
+                    </select>
+                    <button onclick="tambahPesanan('Mie Goreng Spesial', 16000, 'pedas-2')">+ Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Menu 3 -->
+            <div class="menu-card">
+                <img src="images/Kwetiau.jpg" alt="Kwetiau Goreng">
+                <div class="card-body">
+                    <h3>Kwetiau Goreng</h3>
+                    <p class="desc">Kwetiau lembut dengan aroma bawang putih, sawi hijau, dan telur orak-arik.</p>
+                    <p class="price">Rp 16.000</p>
+                    <select id="pedas-3" class="level-select">
+                        <option value="Tidak Pedas">Tidak Pedas</option>
+                        <option value="Sedang" selected>Pedas Sedang</option>
+                        <option value="Pedas">Pedas</option>
+                        <option value="Ekstra Pedas">Ekstra Pedas 🔥</option>
+                    </select>
+                    <button onclick="tambahPesanan('Kwetiau Goreng', 16000, 'pedas-3')">+ Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Menu 4 -->
+            <div class="menu-card">
+                <img src="images/EsTehManis.jpeg" alt="Es Teh Manis">
+                <div class="card-body">
+                    <h3>Es Teh Manis</h3>
+                    <p class="desc">Teh melati wangi seduhan baru dengan gula asli dan es batu kristal yang menyegarkan.</p>
+                    <p class="price">Rp 3.000</p>
+                    <button onclick="tambahPesanan('Es Teh Manis', 3000, null)">+ Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Menu 5 -->
+            <div class="menu-card">
+                <img src="images/EsJeruk.jpg" alt="Es Jeruk Peras">
+                <div class="card-body">
+                    <h3>Es Jeruk</h3>
+                    <p class="desc">Perasan jeruk segar asli tanpa pemanis buatan, cocok penetral rasa pedas.</p>
+                    <p class="price">Rp 4.000</p>
+                    <button onclick="tambahPesanan('Es Jeruk', 4000, null)">+ Tambah ke Keranjang</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bagian Keranjang Belanja -->
+        <section class="cart-box">
+            <h2>🛒 Keranjang Pesanan Anda</h2>
+            <ul id="daftar-keranjang">
+                <li class="empty-msg">Belum ada menu yang dipilih.</li>
+            </ul>
+            
+            <div class="cart-summary">
+                <p>Total Pembayaran: <strong id="total-harga">Rp 0</strong></p>
+            </div>
+
+            <div class="customer-form">
+                <input type="text" id="nama-pemesan" placeholder="Nama Anda (Wajib diisi)">
+                <input type="text" id="alamat-pemesan" placeholder="Alamat Pengiriman / Nomor Meja">
+                <button onclick="kirimWhatsApp()" class="btn-wa">Pesan Sekarang via WhatsApp</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>📍 Jl Cenderawasih Gg. Merak 2 No.1, RT.001/RW.020, Beran Lor, Tridadi, Kec. Sleman, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55511 | ⏰ Buka Setiap Hari: 17.30 - 22.00 WIB</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+//CSS
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #FFFDF9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hero Banner */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                url('https://unsplash.com') center/cover;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #FBC02D;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #D32F2F;
+    color: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #B71C1C;
+}
+
+/* Container & Menu Grid */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #D32F2F;
+    margin-bottom: 30px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.price {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #F57C00;
+    margin-bottom: 12px;
+}
+
+.level-select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.card-body button {
+    width: 100%;
+    padding: 10px;
+    background-color: #D32F2F;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.card-body button:hover {
+    background-color: #B71C1C;
+}
+
+/* Keranjang Belanja */
+.cart-box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-top: 5px solid #F57C00;
+}
+
+.cart-box h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#daftar-keranjang {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#daftar-keranjang li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.btn-hapus {
+    background: #ffebee;
+    color: #D32F2F;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.cart-summary {
+    font-size: 1.25rem;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.customer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.customer-form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.btn-wa {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-wa:hover {
+    background-color: #1EBE5D;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: #ddd;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+//JAVASCRIPT
+    let keranjang = [];
+
+function formatRupiah(angka) {
+    return 'Rp ' + angka.toLocaleString('id-ID');
+}
+
+function tambahPesanan(namaMenu, harga, idSelectPedas) {
+    let keterangan = "";
+    if (idSelectPedas) {
+        const level = document.getElementById(idSelectPedas).value;
+        keterangan = ` (${level})`;
+    }
+
+    const namaLengkap = namaMenu + keterangan;
+
+    const itemAda = keranjang.find(item => item.nama === namaLengkap);
+    if (itemAda) {
+        itemAda.jumlah += 1;
+    } else {
+        keranjang.push({
+            nama: namaLengkap,
+            harga: harga,
+            jumlah: 1
+        });
+    }
+
+    tampilkanKeranjang();
+}
+
+function hapusItem(index) {
+    keranjang.splice(index, 1);
+    tampilkanKeranjang();
+}
+
+function tampilkanKeranjang() {
+    const daftarEl = document.getElementById('daftar-keranjang');
+    const totalEl = document.getElementById('total-harga');
+    
+    daftarEl.innerHTML = '';
+    let totalHarga = 0;
+
+    if (keranjang.length === 0) {
+        daftarEl.innerHTML = '<li class="empty-msg">Belum ada menu yang dipilih.</li>';
+        totalEl.textContent = 'Rp 0';
+        return;
+    }
+
+    keranjang.forEach((item, index) => {
+        const subtotal = item.harga * item.jumlah;
+        totalHarga += subtotal;
+
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <span><strong>${item.jumlah}x</strong> ${item.nama} - ${formatRupiah(subtotal)}</span>
+            <button class="btn-hapus" onclick="hapusItem(${index})">Hapus</button>
+        `;
+        daftarEl.appendChild(li);
+    });
+
+    totalEl.textContent = formatRupiah(totalHarga);
+}
+
+function kirimWhatsApp() {
+    if (keranjang.length === 0) {
+        alert("Silakan pilih minimal 1 menu terlebih dahulu!");
+        return;
+    }
+
+    const namaPemesan = document.getElementById('nama-pemesan').value.trim();
+    const alamatPemesan = document.getElementById('alamat-pemesan').value.trim();
+
+    if (!namaPemesan) {
+        alert("Mohon isi nama Anda terlebih dahulu.");
+        return;
+    }
+
+    const nomorWA = "6281234567890";
+
+    let pesan = `Halo *Waroeng Nasi Goreng*, saya mau pesan:\n\n`;
+    let totalHarga = 0;
+
+    keranjang.forEach(item => {
+        const subtotal = item.harga * item.jumlah;
+        totalHarga += subtotal;
+        pesan += `• ${item.jumlah}x ${item.nama} (${formatRupiah(subtotal)})\n`;
+    });
+
+    pesan += `\n*Total: ${formatRupiah(totalHarga)}*\n`;
+    pesan += `----------------------------\n`;
+    pesan += `Nama: ${namaPemesan}\n`;
+    pesan += `Alamat/Meja: ${alamatPemesan || '-'}\n`;
+
+    const urlWA = `https://wa.me{nomorWA}?text=${encodeURIComponent(pesan)}`;
+    window.open(urlWA, '_blank');
+}
